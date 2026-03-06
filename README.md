@@ -34,9 +34,12 @@ The target variable is Class, which indicates the operational status of the devi
 
 # Input Data (TRAIN.csv)
 
-Features: F01 – F47 
+Features: F01 – F47
+
 Target Variable: Class
-0 → Device operating under normal conditions  
+
+0 → Device operating under normal conditions
+
 1 → Device exhibiting a faulty condition
 
 ---
@@ -52,16 +55,20 @@ Before training the models, the data was cleaned and prepared.
 # Feature Engineering
 
 To help the models understand the sensor behaviour better,additional features are created.
+
 These include:
-• Mean of the sensor readings  
-• Standard deviation of sensor values  
-• Differences betwen consecutive sensor measurements  
+
+• Mean of the sensor readings 
+
+• Standard deviation of sensor values
+
+• Differences betwen consecutive sensor measurements
+
 • Deviation of each sensor value from the overall sensor mean
 
 These features help capture patterns in the sensor data that may indicate faulty device behaviour.
 
 ---
-
 # Feature Selection
 
 After feature engineering, the number of features increased significantly.
