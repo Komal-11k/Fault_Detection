@@ -86,11 +86,9 @@ The models evaluated include:
 • AdaBoost  
 • Gradient Boosting  
 • Random Forest  
-• Decision Tree  
-• K-Nearest Neighbors  
+• Decision Tree   
 • Logistic Regression  
-• Naive Bayes  
-• Support Vector Machine  
+• Naive Bayes    
 • XGBoost  
 • CatBoost  
 • LightGBM  
