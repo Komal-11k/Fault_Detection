@@ -115,54 +115,68 @@ The tuning procss focused on maximizing **Macro F1-Score**.
 ---
 # Stacking Ensemble Model
 Instead of relying on single model,the tuned models are combined using stacking ensemble.
+
 Base Models:
+
 • XGBoost  
 • HistGradientBoosting  
 • CatBoost  
 • Random Forest  
 
 Final Meta Model:
+
 • Logistic Regression
+
 The Logistic Regression model takes predictions from base models and learns how to combine them to produce final prediction.
 
 ---
 
 # Cross-Validation Training
 To properly evaluate model performance, **5-Fold Stratified Cross-Validation** is used.
+
 This ensures that both classes remain balanced in every fold:
+
 • Class = 0 → Normal devices  
+
 • Class = 1 → Faulty devices
+
 Scaling and training are performed inside each fold to avoid data leakage
 
 ---
 
 # Threshold Optimization
 The default probability threshold for classification is usually 0.5, but this may not be optimal when the dataset is imbalanced.
+
 Different thresholds between 0.1 and 0.9 were tested to find the value that gives the best **Macro F1-Score**
 
 ---
 
 # Model Explainability
 To better understand the model's behavior, SHAP (SHapley Additive Explanations)used.
+
 SHAP helps visualize how different features(F01 – F47) contribute to the model’s predictions.
 
 ---
 
 # Final Prediction Generation
 The trained stacking model is used to generate predictions for **TEST.csv**.
+
 The predicted probabilities were converted into **Class labels (0 or 1)** using the optimized threshold.
 
 ---
 
 # Submission File
 Predictions are saved in **FINAL.csv** using required submission format:
+
 ID → CLASS
 
 ---
 
 ## Implementation Notes
 During experimentation, I tested several models using cross-validation to understand how they perform on dataset.
+
 In my experiments, **tree-based models** consistently performed better than other algorithms. They were able to capture complex relationships between sensor features more effectively.
+
 Combining multiple models using a **stacking approach** also improved stability of predictions and slightly increased overall **Macro F1-Score** compared to using a single model.
 
 ---
