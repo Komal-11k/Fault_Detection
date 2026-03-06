@@ -8,19 +8,24 @@ Working with sensor data is not always straightforward. Two main challenges were
 • Sensor readings can contain noise or unexpected spikes.  
 
 • Fault cases are much fewer compared to normal operating conditions.
+
 Because of these challenges,I designed a structured machine learning pipeline that focuses on proper preprocessing,feature engineering,model selection,and tuning.
 The models are evaluated using **Macro F1-Score**, which is the official evaluation metric used in the challenge.
 
 ---
-
 ## Dataset
 The dataset provided for the challenge contains two files:
-• **TRAIN.csv** – Used to train the machine learning models.  
+
+• **TRAIN.csv** – Used to train the machine learning models.
+
 • **TEST.csv** – Used to generate predictions for evaluation.
+
 Each record contains 47 numerical features (F01 – F47). These features represent quantitative measurements captured by the monitoring system during device operation.
 
 The target variable is Class, which indicates the operational status of the device:
+
 0 → Device operating under normal condition 
+
 1 → Device exhibiting a faulty condition
 
 ---
