@@ -4,7 +4,9 @@
 This project is developed for the **Sensor Fault Detection challenge**.  
 The objective is to predict whether a device is operating normally or showing a faulty condition using the sensor measurements provided in the dataset.
 Working with sensor data is not always straightforward. Two main challenges were observed while working on the dataset:
+
 • Sensor readings can contain noise or unexpected spikes.  
+
 • Fault cases are much fewer compared to normal operating conditions.
 Because of these challenges,I designed a structured machine learning pipeline that focuses on proper preprocessing,feature engineering,model selection,and tuning.
 The models are evaluated using **Macro F1-Score**, which is the official evaluation metric used in the challenge.
